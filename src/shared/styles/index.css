@@ -50,8 +50,11 @@
 /* ===== Custom text styles ===== */
 
 @layer components {
+
+  /* ===== Custom Titles ===== */
+
   .headline-XL-regular {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 64px;
     font-weight: 400;
     line-height: 72px;
@@ -59,7 +62,7 @@
   }
 
   .headline-XL-bold {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 64px;
     font-weight: bold;
     line-height: 72px;
@@ -67,7 +70,7 @@
   }
 
   .headline-L-regular {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 64px;
@@ -75,7 +78,7 @@
   }
 
   .headline-L-bold {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 56px;
     font-weight: bold;
     line-height: 64px;
@@ -83,7 +86,7 @@
   }
 
   .headline-M-regular {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 64px;
@@ -91,7 +94,7 @@
   }
 
   .headline-M-bold {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 48px;
     font-weight: bold;
     line-height: 56px;
@@ -99,7 +102,7 @@
   }
 
   .headline-S-regular {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 64px;
@@ -107,10 +110,96 @@
   }
 
   .headline-S-bold {
-    font-family: "Alegreya", serif;
+    font-family: "Alegreya", sans-serif;
     font-size: 48px;
     font-weight: bold;
     line-height: 56px;
     letter-spacing: -0.02em;
+  }
+
+  .title-XL-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+  
+  .title-XL-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .title-L-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .title-L-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  /* ===== Custom Titles ===== */
+
+  .text-XL-regular {
+    font-family: "Figtree", serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  .text-XL-bold {
+    font-family: "Figtree", serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .text-L-regular {
+    font-family: "Figtree", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .text-L-bold {
+    font-family: "Figtree", serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  .text-M-regular {
+    font-family: "Figtree", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .text-M-bold {
+    font-family: "Figtree", serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  .text-S-regular {
+    font-family: "Figtree", serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .text-S-bold {
+    font-family: "Figtree", serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
   }
 }
