@@ -8,8 +8,8 @@ const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full bg-secondary-100 text-basics-900">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <header className="w-full bg-basics-100 text-basics-900">
+      <div className="flex justify-between px-6 py-4">
         <div className="flex items-center space-x-3">
           <Link to="/">
             <img 
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Navegación escritorio */}
+
         <nav className="hidden md:flex items-center gap-6">
           <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Nosotros
@@ -28,9 +28,9 @@ const Header: React.FC = () => {
           <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
           </a>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          <Link to="transparencias" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Transparencias
-          </a>
+          </Link>
           <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Noticias
           </a>
@@ -42,33 +42,33 @@ const Header: React.FC = () => {
           </a>
         </nav>
 
-        {/* Botón de menú móvil */}
+
         <button
           className="md:hidden text-basics-900"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} className="text-2xl" />
+          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} className="text-2xl hover:cursor-pointer transition-transform duration-100 ease-out hover:scale-105" />
         </button>
       </div>
 
       {/* Menú móvil */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center gap-4 pb-6 bg-basics-100 border-t border-basics-300">
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-colors">
+        <div className="md:hidden flex flex-col items-center gap-4 pb-6 bg-basics-100">
+          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Nosotros
           </a>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-colors">
+          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
           </a>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-colors">
+          <Link to="/transparencias" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Transparencias
-          </a>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-colors">
+          </Link>
+          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Noticias
           </a>
           <a
             href="#"
-            className="text-M-bold bg-primary-700 text-basics-100 px-4 py-2 rounded-lg hover:bg-primary-500 transition-colors"
+            className="title-L-bold bg-primary-700 text-basics-100 px-4 py-2 rounded-lg hover:bg-success-500 transition-transform duration-100 ease-out hover:scale-105"
           >
             Colabora
           </a>
