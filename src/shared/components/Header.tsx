@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           </a>
           <a
             href="#"
-            className="title-L-bold bg-primary-700 text-basics-100 px-4 py-2 rounded-lg hover:bg-secondary-700 transition-transform duration-100 ease-out hover:scale-105"
+            className="title-L-bold bg-primary-700 text-basics-100 px-4 py-2 rounded-lg hover:bg-success-500 transition-transform duration-100 ease-out hover:scale-105"
           >
             Colabora
           </a>
