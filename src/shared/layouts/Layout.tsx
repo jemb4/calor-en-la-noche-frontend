@@ -1,14 +1,17 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import { Outlet } from 'react-router';
+import Header from '../components/Header';
 
 const Layout: React.FC = () => {
   return(
-  <>
-    <h1 className='headline-XL-bold text-primary-700'>Hello world from Layout</h1>
-    <h1 className='headline-L-regular text-primary-700'>Hello world from Layout</h1>
-    <h1 className='headline-M-bold text-primary-700'>Hello world from Layout</h1>
+  <div className='min-h-screen flex flex-col'>
+  <Header />
+    <main className='grow bg-basisc-100 px-0 mx-0'>
+      <Outlet />
+    </main>
     <Footer />
-  </>
+  </div>
 )}
 
 export default Layout;
