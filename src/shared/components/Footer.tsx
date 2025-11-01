@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
       <div className="flex-1 my-auto mx-auto">
         <h3 className="mb-3 title-XL-bold  text-center">Contacto</h3>
         <p className="text-S-regular leading-relaxed  text-center">
-          Correo@correo.com
+          calorenlanoche@lasalleandalucia.net
         </p>
       </div>
     </footer>

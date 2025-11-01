@@ -23,9 +23,12 @@ const Header: React.FC = () => {
 
 {/* TODO: Add Lins */}
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          <Link 
+            to="/nosotros"
+            className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105"
+          >
             Nosotros
-          </a>
+          </Link>
           {/* <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
           </a> */}
@@ -55,9 +58,12 @@ const Header: React.FC = () => {
       {/* Menú móvil */}
       {isOpen && (
         <div className="md:hidden flex flex-col items-center gap-4 pb-6 bg-basics-100">
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          <Link 
+            to="/nosotros"
+            className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105"
+          >
             Nosotros
-          </a>
+          </Link>
           {/* <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
           </a> */}

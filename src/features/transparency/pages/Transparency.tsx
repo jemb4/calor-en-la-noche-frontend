@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import LoginModal from "../components/LoginModal";
 
-const Transparencias: React.FC = () => {
+const Transparency: React.FC = () => {
   const [pdfs, setPdfs] = useState<PdfItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState<string>("Todos");
@@ -50,7 +50,7 @@ const Transparencias: React.FC = () => {
         Acceder
       </button>
 
-      {/* Filtro */}
+      {/* Filter */}
       <div className="mb-8 flex flex-wrap items-center gap-3">
         <button
           onClick={() => setSelectedYear("Todos")}
@@ -77,7 +77,7 @@ const Transparencias: React.FC = () => {
         ))}
       </div>
 
-      {/* PDFs o loader */}
+      {/* PDFs or loader */}
       {loading ? (
         <p className="text-center text-gray-500">Cargando PDFs...</p>
       ) : filteredPdfs.length > 0 ? (
@@ -129,4 +129,4 @@ const Transparencias: React.FC = () => {
   );
 };
 
-export default Transparencias;
+export default Transparency;
