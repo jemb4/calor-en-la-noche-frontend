@@ -3,11 +3,13 @@ import { getAllPdfs, type PdfItem } from "../services/pdfService";
 import PdfImg from "../assets/pdf-file.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import LoginModal from "../components/LoginModal";
 
 const Transparencias: React.FC = () => {
   const [pdfs, setPdfs] = useState<PdfItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState<string>("Todos");
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   useEffect(() => {
     const fetchPdfs = async () => {
@@ -35,11 +37,18 @@ const Transparencias: React.FC = () => {
       : pdfs.filter((pdf) => pdf.age === selectedYear);
 
   return (
-    <div className="mb-60 bg-primary-50 py-10 px-6">
+    <div className="mb-60  py-10 px-6">
       <h1 className="headline-M-bold text-primary-700 mb-2">Transparencias</h1>
-      <h2 className="title-XL-bold text-primary-500 mb-8">
+      <h2 className="title-XL-bold text-primary-500 mb-2">
         Encuentra la información que buscas en nuestros PDFs descargables
       </h2>
+      
+        <button
+        className="absolute top-[120px]  right-10 text-primary-500 text-M-regular hover:text-basics-900 hover:underline transition-colors z-10"
+        onClick={() => setIsLoginOpen(true)}
+      >
+        Acceder
+      </button>
 
       {/* Filtro */}
       <div className="mb-8 flex flex-wrap items-center gap-3">
@@ -73,6 +82,18 @@ const Transparencias: React.FC = () => {
         <p className="text-center text-gray-500">Cargando PDFs...</p>
       ) : filteredPdfs.length > 0 ? (
         <div className="flex flex-wrap justify-start items-start gap-6">
+          {selectedYear === "Todos" && (
+            <button
+              className="my-auto w-[120px] h-[120px] flex flex-col items-center justify-center rounded-lg border-2 border-basics-500 text-basics-700 text-center text-S-bold hover:bg-primary-100 hover:border-primary-500 transition-all duration-200 ease-out cursor-pointer"
+              onClick={() => console.log("Subir nueva transparencia")}
+            >
+              <FontAwesomeIcon icon={faPlus} className="text-2xl mb-2" />
+              <span>Subir nueva</span>
+              <span>transparencia</span>
+            </button>
+          )}
+
+          
           {filteredPdfs.map((pdf) => (
             <div
               key={pdf.pdfId}
@@ -97,17 +118,7 @@ const Transparencias: React.FC = () => {
             </div>
           ))}
 
-
-          {selectedYear === "Todos" && (
-            <button
-              className="my-auto w-[120px] h-[120px] flex flex-col items-center justify-center rounded-lg border-2 border-basics-500 text-basics-700 text-center text-S-bold hover:bg-primary-100 hover:border-primary-500 transition-all duration-200 ease-out cursor-pointer"
-              onClick={() => console.log("Subir nueva transparencia")}
-            >
-              <FontAwesomeIcon icon={faPlus} className="text-2xl mb-2" />
-              <span>Subir nueva</span>
-              <span>transparencia</span>
-            </button>
-          )}
+          <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
         </div>
       ) : (
         <p className="text-center text-gray-500">
