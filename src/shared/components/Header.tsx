@@ -21,13 +21,14 @@ const Header: React.FC = () => {
         </div>
 
 
+{/* TODO: Add Lins */}
         <nav className="hidden md:flex items-center gap-6">
           <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Nosotros
           </a>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          {/* <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
-          </a>
+          </a> */}
           <Link to="transparencias" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Transparencias
           </Link>
@@ -57,9 +58,9 @@ const Header: React.FC = () => {
           <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Nosotros
           </a>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          {/* <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
-          </a>
+          </a> */}
           <Link to="/transparencias" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Transparencias
           </Link>
