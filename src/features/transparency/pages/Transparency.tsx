@@ -37,9 +37,11 @@ const Transparency: React.FC = () => {
       : pdfs.filter((pdf) => pdf.age === selectedYear);
 
   return (
-    <div className="mb-60  py-10 px-6">
-      <h1 className="headline-M-bold text-primary-700 mb-2">Transparencias</h1>
-      <h2 className="title-XL-bold text-primary-500 mb-2">
+    <div className="mb-60 bg-basics-50 text-M-regular text-basics-700 px-6 md:px-10 py-10 ">
+       <div className="max-w-5xl mx-auto">
+        
+      <h1 className="headline-M-bold text-primary-700 mb-4">Transparencias</h1>
+      <h2 className="title-XL-bold text-basics-700 mb-14">
         Encuentra la información que buscas en nuestros PDFs descargables
       </h2>
       
@@ -125,6 +127,8 @@ const Transparency: React.FC = () => {
           No hay PDFs disponibles para {selectedYear}.
         </p>
       )}
+      
+       </div>
     </div>
   );
 };

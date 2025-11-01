@@ -12,9 +12,9 @@ const AboutUs: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-basics-50 text-M-regular text-basics-700 px-6 md:px-10 py-10 flex flex-col items-center">
+    <div className="min-h-screen bg-basics-50 text-M-regular text-basics-700 px-6 md:px-10 py-10 flex flex-col items-center">
 
-      <header className="max-w-3xl w-full mb-8">
+      <header className="max-w-5xl w-full mb-8">
         <h1 className="headline-M-bold text-primary-700 mb-4">Quiénes somos</h1>
         <p className="leading-relaxed">
           La Asociación Calor en la Noche es una entidad sin ánimo de lucro
@@ -27,7 +27,7 @@ const AboutUs: React.FC = () => {
       </header>
 
       {/* Dropdown Sections */}
-      <section className="max-w-3xl w-full divide-y divide-gray-200 border-t border-b border-gray-200">
+      <section className="max-w-5xl w-full divide-y divide-gray-200 border-t border-b border-gray-200">
 
  
         <div>
@@ -164,19 +164,19 @@ const AboutUs: React.FC = () => {
 
       <div className="flex flex-col gap-3 mt-10 w-full max-w-3xs mx-auto">
         <Link
-          to="/colabora"
+          to="/colaborar"
           className="bg-primary-700 hover:bg-success-500 text-basics-100 transition-transform duration-200 ease-out hover:scale-105 text-center py-3 rounded-lg font-semibold"
         >
           Donar
         </Link>
         <Link
           to="/"
-          className="bg-primary-50 hover:bg-primary-100 text-basics-900 transition-transform duration-200 ease-out hover:scale-105 text-center py-3 rounded-lg font-semibold"
+          className="bg-primary-50 hover:bg-primary-100 text-basics-900 transition-transform duration-200 ease-out hover:scale-102 text-center py-3 rounded-lg font-semibold"
         >
           Volver
         </Link>
       </div>
-    </main>
+    </div>
   );
 };
 

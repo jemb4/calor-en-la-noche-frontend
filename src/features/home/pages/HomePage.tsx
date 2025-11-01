@@ -20,9 +20,9 @@ const HomePage: React.FC = ()=> {
             La realidad de las personas sin hogar es más cercana de lo que piensas.
             Descubre cómo puedes marcar la diferencia.
           </p>
-          {/* TODO put links into LINK */}
+          
           <Link
-            to="" 
+            to="/colaborar" 
             className="bg-primary-700 cursor-pointer text-center hover:bg-success-700 text-basics-100 px-6 py-3 rounded-full text-L-bold transition"
           >
             Donar ahora
@@ -80,7 +80,7 @@ const HomePage: React.FC = ()=> {
           Brindamos apoyo esencial, compañía y recursos a quienes más lo necesitan directamente en las calles.
         </p>
         <Link 
-         to="/"
+         to="/nosotros"
          className="bg-basics-900 hover:bg-primary-500 text-M-bold text-basics-100 px-6 py-3 rounded-full font-semibold transition cursor-pointer"
         >
           Conoce nuestra misión

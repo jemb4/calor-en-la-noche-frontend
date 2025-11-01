@@ -21,7 +21,6 @@ const Header: React.FC = () => {
         </div>
 
 
-{/* TODO: Add Lins */}
         <nav className="hidden md:flex items-center gap-6">
           <Link 
             to="/nosotros"
@@ -32,18 +31,21 @@ const Header: React.FC = () => {
           {/* <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Qué Hacemos
           </a> */}
-          <Link to="transparencias" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          <Link 
+            to="/transparencias" 
+            className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105"
+          >
             Transparencias
           </Link>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          <a className="title-L-bold hover:text-basics-500 transition-transform duration-100 ease-out hover:scale-105 cursor-not-allowed">
             Noticias
           </a>
-          <a
-            href="#"
+          <Link
+            to="/colaborar"
             className="title-L-bold bg-primary-700 text-basics-100 px-4 py-2 rounded-lg hover:bg-success-500 transition-transform duration-100 ease-out hover:scale-105"
           >
             Colabora
-          </a>
+          </Link>
         </nav>
 
 
@@ -70,15 +72,15 @@ const Header: React.FC = () => {
           <Link to="/transparencias" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
             Transparencias
           </Link>
-          <a href="#" className="title-L-bold hover:text-primary-700 transition-transform duration-100 ease-out hover:scale-105">
+          <a className="title-L-bold hover:text-basics-500 transition-transform duration-100 ease-out hover:scale-105 cursor-not-allowed">
             Noticias
           </a>
-          <a
-            href="#"
+          <Link
+            to="/colaborar"
             className="title-L-bold bg-primary-700 text-basics-100 px-4 py-2 rounded-lg hover:bg-success-500 transition-transform duration-100 ease-out hover:scale-105"
           >
             Colabora
-          </a>
+          </Link>
         </div>
       )}
     </header>
