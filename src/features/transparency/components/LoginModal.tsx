@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { login } from "../../auth/services/authService"; 
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -8,7 +9,29 @@ interface LoginModalProps {
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
   if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      await login(email, password);
+      onClose();
+      window.location.reload();
+    } catch (err) {
+      setError("Credenciales incorrectas o error de conexión.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div
@@ -26,20 +49,24 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
 
-        <h2 className="text-center text-lg font-bold mb-1">Login</h2>
-        <h3 className="text-center title-L-bold mb-8 text-basics-900">
+        <h2 className="text-center text-XL-bold font-bold mb-1">Login</h2>
+        <h3 className="text-center text-L-bold mb-8 text-basics-900">
           Bienvenido
         </h3>
 
-        <form className="flex flex-col gap-4">
+        <form className="flex flex-col gap-4 text-M-bold" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full rounded-lg p-3 bg-basics-300 placeholder-primary-700 focus:outline-none"
           />
           <input
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded-lg p-3 bg-basics-300 placeholder-primary-700 focus:outline-none"
           />
 
@@ -50,11 +77,14 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             Forgot password?
           </a> */}
 
+          {error && <p className="text-center text-red-500 text-sm">{error}</p>}
+
           <button
             type="submit"
-            className="mt-4 w-full bg-primary-700 text-white rounded-lg py-3 font-semibold hover:bg-primary-500 transition-colors cursor-pointer"
+            disabled={loading}
+            className="mt-4 w-full bg-primary-700 text-white rounded-lg py-3 text-M-bold hover:bg-primary-500 transition-colors cursor-pointer"
           >
-            Login
+            {loading ? "Accediendo..." : "Login"}
           </button>
         </form>
       </div>

@@ -1,7 +1,6 @@
 import axios, { type AxiosRequestHeaders } from "axios";
 import { getAuthHeader } from "../store/authStorage";
-
-const API_URL: string = "http://localhost:8080/api/v1";
+import API_URL from "./apiCalorNoche";
 
 const api = axios.create({
   baseURL: API_URL,

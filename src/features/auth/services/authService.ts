@@ -1,25 +1,41 @@
-import axios, { AxiosError } from 'axios';
-import API_URL from '../../../app/api/apiCalorNoche';
-import type UserData from './IUserData';
+import axios from "axios";
+import { encodeBase64 } from "./encrypt";
+import API_URL from "../../../app/api/apiCalorNoche";
 
-const LOGIN_ENDPOINT : string = "login";
-
-export const loginService = async (userData: UserData) => {
-
-    const credentials = btoa(`${userData.email}:${userData.password}`);
-  try {
-    const response = await axios.get(`${API_URL}/${LOGIN_ENDPOINT}`, {
-      headers: {
-        'Authorization': `Basic ${credentials}`
-      },
-      withCredentials: true 
-    });
-
-    return response.data;
-  } catch (err: unknown) {
-    if (err instanceof AxiosError && err.response?.status === 401) {
-      throw { message: "Credenciales incorrectas" };
-    }
-    throw { message: "Error en el login" };
-  }
+export interface AuthUser {
+  email: string;
+  role: string;
+  status: string;
 }
+
+export const login = async (email: string, password: string): Promise<AuthUser> => {
+  const encoded = encodeBase64(`${email}:${password}`);
+
+  const response = await axios.get<AuthUser>(`${API_URL}/login`, {
+    headers: {
+      Authorization: `Basic ${encoded}`,
+    },
+  });
+
+  const user = response.data;
+
+  sessionStorage.setItem("authUser", JSON.stringify(user));
+  sessionStorage.setItem("authHeader", `Basic ${encoded}`);
+
+  return user;
+};
+
+export const getAuthUser = (): AuthUser | null => {
+  const stored = sessionStorage.getItem("authUser");
+  return stored ? JSON.parse(stored) : null;
+};
+
+export const getAuthHeader = (): Record<string, string> => {
+  const authHeader = sessionStorage.getItem("authHeader");
+  return authHeader ? { Authorization: authHeader } : {};
+};
+
+export const logout = (): void => {
+  sessionStorage.removeItem("authUser");
+  sessionStorage.removeItem("authHeader");
+};
