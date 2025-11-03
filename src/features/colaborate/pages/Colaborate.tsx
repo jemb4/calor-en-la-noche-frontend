@@ -52,7 +52,7 @@ const Colaborate: React.FC = () => {
         ))}
       </section>
 
-      {/* Contenido dinámico debajo */}
+      {/* dinamic content */}
       <div
         className={`transition-all duration-500 ease-in-out overflow-hidden my-8 max-w-5xl w-full ${
           selectedCard ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
