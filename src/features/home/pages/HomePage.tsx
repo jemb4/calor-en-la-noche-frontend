@@ -1,7 +1,7 @@
 import React from "react"
 import Bank from "../assets/nightbank.png"
 import HomeCard from "../components/HomeCard"
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils, faCommentDots, faLink } from "@fortawesome/free-solid-svg-icons";
 

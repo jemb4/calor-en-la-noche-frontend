@@ -67,40 +67,56 @@ const UploadPdfModal: React.FC<UploadPdfModalProps> = ({
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-sm font-semibold mb-1 text-basics-700">
+            <label className="block text-M-bold mb-1 text-basics-700">
               Título:
             </label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full border border-basics-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full text-M-regular border border-basics-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              placeholder="Título"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold mb-1 text-basics-700">
+            <label className="block text-M-bold mb-1 text-basics-700">
               Año:
             </label>
             <input
               type="number"
               value={year}
               onChange={(e) => setYear(e.target.value)}
-              className="w-full border border-basics-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full border text-M-regular border-basics-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
               min="2000"
               max="2100"
+              placeholder="2025"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold mb-1 text-basics-700">
+            <label className="block text-M-bold mb-1 text-basics-700">
               Archivo (solo PDF):
             </label>
+
+            <div className="flex items-center gap-3">
+              <label
+                htmlFor="file-upload"
+                className="cursor-pointer bg-basics-500/90 hover:bg-primary-500/90 text-white px-4 py-2 rounded-lg transition-colors"
+              >
+                Seleccionar archivo
+              </label>
+              <span className="text-sm text-basics-600 truncate max-w-[150px]">
+                {file ? file.name : "Ningún archivo seleccionado"}
+              </span>
+            </div>
+
             <input
+              id="file-upload"
               type="file"
               accept="application/pdf"
               onChange={(e) => setFile(e.target.files?.[0] || null)}
-              className="w-full border border-basics-300 rounded-lg p-2 bg-basics-100"
+              className="hidden"
             />
           </div>
 
@@ -110,7 +126,7 @@ const UploadPdfModal: React.FC<UploadPdfModalProps> = ({
             className={`mt-4 w-full bg-primary-700 text-white rounded-lg py-3 font-semibold transition-colors ${
               isSubmitting
                 ? "opacity-60 cursor-not-allowed"
-                : "hover:bg-primary-500 cursor-pointer"
+                : "hover:bg-success-500 cursor-pointer"
             }`}
           >
             {isSubmitting ? "Subiendo..." : "Subir PDF"}
