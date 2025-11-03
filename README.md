@@ -137,3 +137,5 @@ Endpoints REST para el panel de administración
 
 
 ```
+
+![Coverage](docs/coverage.png)
