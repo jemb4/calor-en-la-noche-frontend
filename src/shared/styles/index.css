@@ -1,0 +1,221 @@
+@import "@fontsource/figtree/400.css";
+@import "@fontsource/figtree/700.css";
+@import "@fontsource/alegreya/400.css";
+@import "@fontsource/alegreya/700.css";
+
+@import "tailwindcss";
+
+@theme {
+  /* ===== Typography ===== */
+
+  --font-display: "Figtree", serif;
+  --font-titles: "Alegreya", sans-serif;
+
+  /* ===== Colors ===== */
+
+  --color-basics-900: #1B1B1B;
+  --color-basics-700: #2E2E2E;
+  --color-basics-500: #767676;
+  --color-basics-300: #DCDCDC;
+  --color-basics-100: #FAF8F7;
+
+  --color-primary-900: #5C0000;
+  --color-primary-700: #9B0101;
+  --color-primary-500: #B73333;
+  --color-primary-300: #D86969;
+  --color-primary-100: #F2A9A9;
+  --color-primary-50: #F9D7D7;
+
+  --color-secondary-900: #482F14;
+  --color-secondary-700: #9A642A;
+  --color-secondary-500: #B87732;
+  --color-secondary-300: #F4E6D7;
+  --color-secondary-100: #FDFAF7;
+
+  --color-success-900: #2B3824;
+  --color-success-700: #5C784C;
+  --color-success-500: #6E8F5B;
+  --color-success-300: #9BB58C;
+  --color-success-100: #CBD8C3;
+
+  --color-warning-900: #4B3A11;
+  --color-warning-700: #9B6D01;
+  --color-warning-500: #B78F33;
+  --color-warning-300: #DDBA6B;
+  --color-warning-100: #F2DCA9;
+
+
+
+}
+
+/* ===== Custom text styles ===== */
+
+@layer components {
+
+  /* ===== Custom Titles ===== */
+
+  .headline-XL-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-XL-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 72px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-L-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-L-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 64px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-M-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-M-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-S-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+  }
+
+  .headline-S-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+  }
+
+  .title-XL-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+  
+  .title-XL-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .title-L-regular {
+    font-family: "Alegreya", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .title-L-bold {
+    font-family: "Alegreya", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  /* ===== Custom Titles ===== */
+
+  .text-XL-regular {
+    font-family: "Figtree", serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  .text-XL-bold {
+    font-family: "Figtree", serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+
+  .text-L-regular {
+    font-family: "Figtree", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .text-L-bold {
+    font-family: "Figtree", serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  .text-M-regular {
+    font-family: "Figtree", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .text-M-bold {
+    font-family: "Figtree", serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  .text-S-regular {
+    font-family: "Figtree", serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .text-S-bold {
+    font-family: "Figtree", serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}

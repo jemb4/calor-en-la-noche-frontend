@@ -1,10 +1,21 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter, Navigate } from "react-router-dom"
 import Layout from "../../shared/layouts/Layout";
+import HomePage from "../../features/home/pages/HomePage";
+import Transparency from "../../features/transparency/pages/Transparency";
+import AboutUs from "../../features/about-us/pages/AboutUs";
+import Colaborate from "../../features/colaborate/pages/Colaborate";
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />
+    element: <Layout />,
+    children: [
+      {index: true, element: <HomePage />},
+      {path:'/transparencias', element: <Transparency />},
+      {path:'/nosotros', element: <AboutUs />},
+      {path:'/colaborar', element: <Colaborate />},
+      {path: "*", element: <Navigate to="/" replace />},
+    ]
   }
 ])
 
