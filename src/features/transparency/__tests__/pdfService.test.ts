@@ -1,7 +1,7 @@
 import axios from "axios";
 import { vi, describe, it, expect, beforeEach } from "vitest";
 import { getAuthHeader } from "../../auth/services/authService";
-import { getAllPdfs, deletePdf, uploadPdf } from "../services/pdfService";
+import { deletePdf, uploadPdf } from "../services/pdfService";
 
 // ✅ Mock de axios
 vi.mock("axios");

@@ -75,7 +75,6 @@ describe("UploadPdfModal component", () => {
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const fileInput = screen.getByLabelText("Seleccionar archivo");
     const hiddenInput = document.querySelector("input[type='file']")!;
     Object.defineProperty(hiddenInput, "files", {
       value: [mockFile],
